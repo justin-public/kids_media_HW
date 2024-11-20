@@ -1,3 +1,9 @@
+/*
+TARGET:Raspberry Pi B 3
+Copyright(c)2019, epicgram Co.,LTD
+PROJECT: Egg Incubator kiosk1
+REVISION:V1.0
+*/
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
@@ -240,7 +246,7 @@ void Led(uint16_t from,uint16_t to,uint16_t wait,uint8_t r,uint8_t g,uint8_t b)
   	uint16_t i;
  	for(i=from; i<=to; i++)
   	{
-     		pixels.setPixelColor(i,pixels.Color(r,g,b));
+     	pixels.setPixelColor(i,pixels.Color(r,g,b));
   	}
   	pixels.show();
   	//delay(wait);
@@ -321,7 +327,7 @@ int main(int argc,char *argv[])
         port_init();
         socket_init();
 
-        pixels.show = transfer;
+    pixels.show = transfer;
 	pixels.setPixelColor = PixelColor;
 	pixels.Color = setColor;
 	parse_opts(argc, argv);
